@@ -1,0 +1,15 @@
+{
+  "name": "eu-cookie-notice-geolocator-service",
+  "version": "1.0.0",
+  "description": "Detects if an EU cookie notice should be shown to the user, based on the CloudFront-Viewer-Country header.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Alyn Porter",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.17.0",
+    "serverless-offline": "^3.15.0"
+  }
+}
