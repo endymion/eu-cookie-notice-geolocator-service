@@ -12,11 +12,11 @@ That's what this project is.
 
 This HTTP microservice uses AWS Lambda and AWS API Gateway, using the Serverless Framework.  AWS API Gateway services run through CloudFront by default.  CloudFront provides an HTTP header on each request called ```CloudFront-Viewer-Country``` with an [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code identifing the location of the requestor.
 
-The handler function checks that code and compares it against a list of EU countries.  It responds with a JSON hash that includes the ```country``` value and the final decision: the ```located-in-EU``` value will be true or false.
+The handler function checks that code and compares it against a list of EU countries.  It responds with a JSON hash that includes the ```country``` value and the final decision: the ```in_EU``` value will be true or false.
 
     {
       'country': 'US',
-      'located-in-EU': false
+      'in_EU': false
     }
 
 ## Running tests
@@ -34,3 +34,21 @@ Install dependencies with:
 Start local HTTP server with:
 
     sls offline start
+
+## Cloud operation
+
+### Credentials
+
+One way is to have an [AWS profile set up](https://serverless.com/framework/docs/providers/aws/guide/credentials/) in ```~/.aws/credentials``` that looks like this:
+
+    [eu-cookie-notice-geolocator-service]
+    aws_access_key_id = [REDACTED]
+    aws_secret_access_key = [REDACTED]
+
+There are other ways to handle credentials, including environment variables.  Use whatever makes sense for your development or continuous delivery system or whatever.
+
+### Development stage deployment
+
+To deploy to the dev stage using the profile method of handling credentials, use ```sls deploy``` with that profile:
+
+    sls deploy --aws-profile eu-cookie-notice-geolocator-service
