@@ -59,7 +59,7 @@ provider:
 
 functions:
   locate:
-    handler: handler.locate
+    handler: locator.locate
     events:
       - http:
            path: /locate

@@ -12,12 +12,18 @@ That's what this project is.
 
 This HTTP microservice uses AWS Lambda and AWS API Gateway, using the Serverless Framework.  AWS API Gateway services run through CloudFront by default.  CloudFront provides an HTTP header on each request called ```CloudFront-Viewer-Country``` with an [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code identifing the location of the requestor.
 
-The handler function checks that code and compares it against a list of EU countries.  It responds with a JSON hash that includes the ```CloudFront-Viewer-Country``` value and the final decision: the ```Viewer-Is-In-EU``` value will be true or false.
+The handler function checks that code and compares it against a list of EU countries.  It responds with a JSON hash that includes the ```country``` value and the final decision: the ```located-in-EU``` value will be true or false.
 
     {
-      'CloudFront-Viewer-Country': 'US',
-      'Viewer-Is-In-EU': false
+      'country': 'US',
+      'located-in-EU': false
     }
+
+## Running tests
+
+The tests use Mocha, and are located in the ```tests/``` folder.
+
+    npm test
 
 ## Offline operation
 
