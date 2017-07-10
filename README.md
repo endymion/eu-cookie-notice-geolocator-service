@@ -42,8 +42,8 @@ Start local HTTP server with:
 One way is to have an [AWS profile set up](https://serverless.com/framework/docs/providers/aws/guide/credentials/) in ```~/.aws/credentials``` that looks like this:
 
     [eu-cookie-notice-geolocator-service]
-    aws_access_key_id = [REDACTED]
-    aws_secret_access_key = [REDACTED]
+    aws_access_key_id = YOURACCESSKEYID
+    aws_secret_access_key = YOURSECRETACCESSKEY
 
 There are other ways to handle credentials, including environment variables.  Use whatever makes sense for your development or continuous delivery system or whatever.
 
