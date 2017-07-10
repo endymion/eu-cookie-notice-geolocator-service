@@ -1,4 +1,4 @@
-# EU Cookie Notice Geolocator service
+# EU cookie notice geolocator service
 
 If you need to displa a cookie notice only to visitors to your web site from the European Union, then you could do the per-user location test on the server side or the client side.  Doing it from the client side is a good idea to shift the load outward from your servers to your visitors' web browsers.
 
