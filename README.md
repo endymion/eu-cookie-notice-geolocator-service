@@ -52,3 +52,22 @@ There are other ways to handle credentials, including environment variables.  Us
 To deploy to the dev stage using the profile method of handling credentials, use ```sls deploy``` with that profile:
 
     sls deploy --aws-profile eu-cookie-notice-geolocator-service
+
+## Usage
+
+In a web site, you might have a cookie notice that's hidden by default:
+
+    <div id="cookies" style="display: none">
+      <b>WE USE COOKIES</b>
+    </div>
+
+You can selectively show that notice with jQuery code like this:
+
+    var url = "https://[YOUR DEPLOYMENT ID].execute-api.us-east-1.amazonaws.com/dev/locate";
+    $.getJSON(url, function (response) {
+      if(response.in_EU) {
+        $( "#cookies" ).show();
+      }
+    });
+
+This code will check the service and display the notice if the response JSON includes ```in_EU: true```.
