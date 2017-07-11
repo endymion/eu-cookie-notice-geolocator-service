@@ -73,3 +73,13 @@ You can selectively show that notice with jQuery code like this:
     });
 
 This code will check the service and display the notice if the response JSON includes ```in_EU: true```.
+
+## Docker
+If you use Docker you can quickly get things up and running locally by running ```docker-compose up```
+
+This will boot a ```node``` container, install all necessary dependencies and make the app available at ```localhost:3000/locate```
+
+### Running tests with Docker
+You can run tests on the container by running ```docker-compose run app npm test```
+
+Alternatively you can run the tests on container start by running ```docker-compose -f docker-compose-test.yml up```.
