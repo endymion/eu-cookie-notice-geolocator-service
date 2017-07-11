@@ -9,7 +9,8 @@ describe('LocatorService', function() {
     const country = 'AT'; // Austria is in the European Union.
     const response = {
       statusCode: 200,
-      body: '{"country":"AT","located-in-EU":true}'
+      headers: { "Access-Control-Allow-Origin": "*" },
+      body: '{"country":"AT","in_EU":true}'
     };
 
     return expect(locatorService.locate(country)).to.eql(response);
@@ -20,7 +21,8 @@ describe('LocatorService', function() {
     const country = 'US'; // Austria is in the European Union.
     const response = {
       statusCode: 200,
-      body: '{"country":"US","located-in-EU":false}'
+      headers: { "Access-Control-Allow-Origin": "*" },
+      body: '{"country":"US","in_EU":false}'
     };
 
     return expect(locatorService.locate(country)).to.eql(response);

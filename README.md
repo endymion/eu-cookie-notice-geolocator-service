@@ -35,6 +35,8 @@ Start local HTTP server with:
 
     sls offline start
 
+Then call the service at http://localhost:3000/locate
+
 ## Cloud operation
 
 ### Credentials
