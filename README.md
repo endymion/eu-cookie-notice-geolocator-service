@@ -1,6 +1,6 @@
 # EU cookie notice geolocator service
 
-If you need to displa a cookie notice only to visitors to your web site from the European Union, then you could do the per-user location test on the server side or the client side.  Doing it from the client side is a good idea to shift the load outward from your servers to your visitors' web browsers.
+If you need to display a cookie notice only to visitors to your web site from the European Union, then you could do the per-user location test on the server side or the client side.  Doing it from the client side is a good idea to shift the load outward from your servers to your visitors' web browsers.
 
 If you need to decide on the browser side whether to display an EU cookie notice, then your client-side code could pass the browser's IP to a geolocation service and then check the country code in the results against a list in your browser code.  Problem: Those IP geolocation services can be expensive if you have a lot of traffic.
 
