@@ -1,0 +1,10 @@
+version: "2"
+services:
+  app:
+    build: .
+    working_dir: /usr/src/app
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
+    ports:
+      - "3000:3000"
